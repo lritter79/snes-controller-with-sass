@@ -1,3 +1,7 @@
+/* variables/reusable component
+ * */
+/* General Outlne of Controller
+ * */
 .circle {
   width: 150px;
   height: 150px;
@@ -20,6 +24,19 @@
   left: 75px;
   height: 125px;
   width: 275px;
+}
+
+/* Left side of the controller with arrows
+ * */
+#arrow-container {
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  top: 30px;
+  left: 30px;
+  position: absolute;
+  z-index: 5;
+  box-shadow: 1px 1px 1px grey inset, -1px -1px 1px grey inset, -1px 1px 1px grey inset, 1px -1px 1px grey inset;
 }
 
 .arrow {
@@ -84,6 +101,8 @@
   left: 63px;
 }
 
+/* right side of the controller with circle buttons
+ * */
 .circle-button {
   border-radius: 50%;
   width: 29px;
@@ -95,6 +114,46 @@
 .circle-button:hover {
   transform: translate(2px, 2px);
   box-shadow: -2px -2px 2px #333333;
+}
+
+.button-oval {
+  width: 35px;
+  z-index: 4;
+  transform: rotate(225deg);
+  position: absolute;
+}
+.button-oval > div {
+  background-color: #d7d7d7;
+}
+.button-oval > .middle-rectangle {
+  height: 40px;
+  position: absolute;
+  width: 35px;
+  top: 18px;
+}
+.button-oval > .last-circle {
+  border-radius: 50%;
+  height: 35px;
+  top: 42px;
+  position: absolute;
+  width: 35px;
+}
+.button-oval > .first-circle {
+  height: 35px;
+  border-radius: 50%;
+  top: -85px;
+  left: 40px;
+  width: 35px;
+}
+
+#ovalab {
+  top: 88px;
+  left: 58px;
+}
+
+#ovalxy {
+  top: 58px;
+  left: 28px;
 }
 
 #x {
@@ -119,61 +178,6 @@
   background-color: #f7d51d;
   top: 90px;
   left: 60px;
-}
-
-.pill-button {
-  background-color: #575d61;
-  z-index: 5;
-  width: 9px;
-  height: 30px;
-  border: 2px outset black;
-  position: absolute;
-  transform: rotateZ(55deg);
-  top: 65px;
-  border-radius: 48%;
-}
-.pill-button:hover {
-  width: 7px;
-  height: 28px;
-  border: 3px inset black;
-  cursor: pointer;
-}
-
-#select {
-  left: 100px;
-}
-
-#start {
-  left: 170px;
-}
-
-#arrow-container {
-  border-radius: 50%;
-  height: 90px;
-  width: 90px;
-  top: 30px;
-  left: 30px;
-  position: absolute;
-  z-index: 5;
-  box-shadow: 1px 1px 1px grey inset, -1px -1px 1px grey inset, -1px 1px 1px grey inset, 1px -1px 1px grey inset;
-}
-
-.pill-text {
-  font-size: 12px;
-  font-family: sans-serif;
-  position: absolute;
-  font-style: italic;
-  font-size: 12px;
-  top: 85px;
-  color: #575d61;
-}
-
-#select-text {
-  left: 80px;
-}
-
-#start-text {
-  left: 155px;
 }
 
 #button-container {
@@ -211,6 +215,52 @@
 #letter-b {
   top: 105px;
   left: 50px;
+  /* middle two buttons
+  * */
+}
+
+.pill-button {
+  background-color: #575d61;
+  z-index: 5;
+  width: 9px;
+  height: 30px;
+  border: 2px outset black;
+  position: absolute;
+  transform: rotateZ(55deg);
+  top: 65px;
+  border-radius: 48%;
+}
+.pill-button:hover {
+  width: 7px;
+  height: 28px;
+  border: 3px inset black;
+  cursor: pointer;
+}
+
+#select {
+  left: 100px;
+}
+
+#start {
+  left: 170px;
+}
+
+.pill-text {
+  font-size: 12px;
+  font-family: sans-serif;
+  position: absolute;
+  font-style: italic;
+  font-size: 12px;
+  top: 85px;
+  color: #575d61;
+}
+
+#select-text {
+  left: 80px;
+}
+
+#start-text {
+  left: 155px;
 }
 
 /*# sourceMappingURL=output.css.map */

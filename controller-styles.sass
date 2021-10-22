@@ -1,3 +1,6 @@
+/*
+ variables/reusable component
+ */
 $nes-light-gray: #d7d7d7
 $nes-grey: #575d61
 $nes-dark-gray: #333333
@@ -6,6 +9,14 @@ $nes-green: #92cc41
 $nes-red: #e76e55
 $nes-yellow: #f7d51d
 $nes-letter-color: #a3a8ae
+@mixin snes-text()
+    font-size: 12px
+    font-family: sans-serif
+    position: absolute
+
+/*
+ General Outlne of Controller
+ */
 
 .circle
     width: 150px
@@ -24,6 +35,21 @@ $nes-letter-color: #a3a8ae
     left: 75px
     height: 125px
     width: 275px
+
+/*
+ Left side of the controller with arrows
+ */
+
+#arrow-container
+    border-radius: 50%
+    height: 90px
+    width: 90px
+    top: 30px
+    left: 30px
+    position: absolute
+    z-index: 5
+    box-shadow: 1px 1px 1px grey inset, -1px -1px 1px grey inset, -1px 1px 1px grey inset, 1px -1px 1px grey inset
+
 .arrow
     background-color: $nes-grey
     z-index: 5
@@ -63,6 +89,9 @@ $nes-letter-color: #a3a8ae
 #top-arrow
     @include arrow-border($top: 3, $bottom: 0, $left: 3, $right: 3, $width: 18, $heigth: 20, $top-position: 44, $left-position: 63)
 
+/*
+ right side of the controller with circle buttons
+ */
 .circle-button
     border-radius: 50%
     width: 29px
@@ -74,6 +103,37 @@ $nes-letter-color: #a3a8ae
         transform: translate(2px, 2px)
         box-shadow: -2px -2px 2px $nes-dark-gray
 
+.button-oval
+    width: 35px
+    z-index: 4
+    transform: rotate(225deg)
+    position: absolute
+    > div
+        background-color: $nes-light-gray
+    >.middle-rectangle
+        height: 40px
+        position: absolute
+        width: 35px
+        top: 18px
+    >.last-circle
+        border-radius: 50%
+        height: 35px
+        top: 42px
+        position: absolute
+        width: 35px
+    >.first-circle
+        height: 35px
+        border-radius: 50%
+        top: -85px
+        left: 40px
+        width: 35px
+
+#ovalab
+    top: 88px
+    left: 58px
+#ovalxy
+    top: 58px
+    left: 28px
 #x
     background-color: $nes-green
     top: 60px
@@ -90,54 +150,7 @@ $nes-letter-color: #a3a8ae
     background-color: $nes-yellow
     top: 90px
     left: 60px
-.pill-button
-    background-color: $nes-grey
-    z-index: 5
-    width: 9px
-    height: 30px
-    border: 2px outset black
-    position: absolute
-    transform: rotateZ(55deg)
-    top: 65px
-    border-radius: 48%
-    &:hover
-        width: 7px
-        height: 28px
-        border: 3px inset black
-        cursor: pointer
 
-#select
-    left: 100px
-#start
-    left: 170px
-
-#arrow-container
-    border-radius: 50%
-    height: 90px
-    width: 90px
-    top: 30px
-    left: 30px
-    position: absolute
-    z-index: 5
-    box-shadow: 1px 1px 1px grey inset, -1px -1px 1px grey inset, -1px 1px 1px grey inset, 1px -1px 1px grey inset
-
-@mixin snes-text()
-    font-size: 12px
-    font-family: sans-serif
-    position: absolute
-.pill-text
-    @include snes-text()
-    font-style: italic
-    font-size: 12px
-    top: 85px
-
-    color: $nes-grey
-
-#select-text
-    left: 80px
-
-#start-text
-    left: 155px
 #button-container
     position: absolute
     height: 130px
@@ -164,3 +177,40 @@ $nes-letter-color: #a3a8ae
 #letter-b
     top: 105px
     left: 50px
+    /*
+     middle two buttons
+     */
+.pill-button
+    background-color: $nes-grey
+    z-index: 5
+    width: 9px
+    height: 30px
+    border: 2px outset black
+    position: absolute
+    transform: rotateZ(55deg)
+    top: 65px
+    border-radius: 48%
+    &:hover
+        width: 7px
+        height: 28px
+        border: 3px inset black
+        cursor: pointer
+
+#select
+    left: 100px
+#start
+    left: 170px
+
+.pill-text
+    @include snes-text()
+    font-style: italic
+    font-size: 12px
+    top: 85px
+
+    color: $nes-grey
+
+#select-text
+    left: 80px
+
+#start-text
+    left: 155px
